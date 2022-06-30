@@ -1,0 +1,38 @@
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input {
+    /* border: 1px dashed rgb(248, 138, 138); */
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-direction: column;
+    color: var(--light-area-font-midtone);
+}
+
+.input>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid var(--panel-lines);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.input .div:first-child {
+    border: 1px solid green;
+    flex: 1;
+}
+
+input {
+    color: var(--light-area-font-dark);
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-left: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    max-width: 80%;
+}
