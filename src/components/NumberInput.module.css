@@ -20,6 +20,10 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
+.invalid-field {
+    background-color: rgba(165, 42, 42, 0.315);
+}
+
 .input .div:first-child {
     border: 1px solid green;
     flex: 1;
