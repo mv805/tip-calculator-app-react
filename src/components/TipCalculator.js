@@ -3,6 +3,7 @@ import styles from './TipCalculator.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import TipSelector from './TipSelector';
 
 const TipCalculator = () => {
 
@@ -11,6 +12,7 @@ const TipCalculator = () => {
 
     const [billAmount, setBillAmount] = useState(0);
     const [numOfPeople, setNumOfPeople] = useState(1);
+    const [selectedPercentage, setSelectedPercentage] = useState(0);
 
     const setBill = (price) => {
         setBillAmount(price);
@@ -25,21 +27,27 @@ const TipCalculator = () => {
         setNumOfPeople(Math.round(numOfPeople));
         const billInteger = billAmount.toFixed(2);
         setBillAmount(+billInteger);
-        
+
     };
 
-    console.log('Bill: ', billAmount, typeof billAmount);
-    console.log('Num of People: ', numOfPeople, typeof numOfPeople);
+    // console.log('Bill: ', billAmount, typeof billAmount);
+    // console.log('Num of People: ', numOfPeople, typeof numOfPeople);
 
     return (
         <div className={ styles.panel }>
-            <button onClick={ formatInput }>test field reset</button>
             <NumberInput
                 field="Bill"
                 symbol={ moneySymbol }
                 onFieldUpdate={ setBill }
                 minValue={ 0 }
                 displayValue={ billAmount }
+            />
+            <TipSelector
+                selectedPercentage={ selectedPercentage }
+                onSelectPercentage={ (percent) => {
+                    setSelectedPercentage(percent);
+                    formatInput();
+                } }
             />
             <NumberInput
                 field="Number of People"

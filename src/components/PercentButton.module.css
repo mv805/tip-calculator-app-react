@@ -1,0 +1,22 @@
+.not-selected {
+    color: var(--dark-area-font-bright);
+    background-color: var(--panel-dark-boxes);
+}
+
+.selected {
+    color: var(--dark-area-font-midtone);
+    background-color: var(--panel-light-boxes);
+}
+
+.button {
+    font-family: inherit;
+    font-size: 1.75rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.button:hover {
+    cursor: pointer;
+}

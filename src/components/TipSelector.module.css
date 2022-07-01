@@ -1,0 +1,22 @@
+.tip-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 1rem;
+    flex-direction: column;
+    color: var(--light-area-font-midtone);
+    
+}
+
+.tip-selector>div {
+    border: 3px solid var(--panel-lines);
+    border-radius: 5px;
+    padding: 1rem;
+    height: 15rem;
+}
+
+.button-panel {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    row-gap: 1.25rem;
+    column-gap: 1.25rem;
+}

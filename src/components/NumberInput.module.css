@@ -6,7 +6,7 @@ input[type=number]::-webkit-inner-spin-button {
     /* border: 1px dashed rgb(248, 138, 138); */
     display: flex;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin: 1rem 1rem;
     flex-direction: column;
     color: var(--light-area-font-midtone);
 }

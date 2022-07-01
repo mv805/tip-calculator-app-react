@@ -4,14 +4,14 @@
   --background: hsl(240, 17%, 9%);
   --panel: rgb(44, 42, 59);
   --panel-lines: rgb(54, 51, 75);
-  --panel-dark-boxes: red;
-  --panel-light-boxes: red;
+  --panel-dark-boxes: rgb(29, 26, 48);
+  --panel-light-boxes: rgb(114, 104, 168);
 
   --light-area-font-dark: rgb(161, 145, 212);
   --light-area-font-midtone: rgb(115, 106, 145);
-  --dark-area-font-bright: red;
-  --dark-area-font-midtone: rgb(102, 94, 128);
-  --dark-area-font-darker: red;
+  --dark-area-font-bright: rgb(215, 196, 252);
+  --dark-area-font-midtone: rgb(39, 32, 65);
+  --dark-area-font-darker: rgb(255, 255, 255);
 
 }
 

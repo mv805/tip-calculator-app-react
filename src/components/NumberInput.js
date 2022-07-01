@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './NumberInput.module.css';
 
 const NumberInput = (props) => {
@@ -9,7 +8,6 @@ const NumberInput = (props) => {
         if (isNaN(e.target.value) ||
             +e.target.value < props.minValue ||
             e.target.value === '') {
-            console.log('invalid');
             return;
         } 
         
@@ -22,12 +20,12 @@ const NumberInput = (props) => {
         const leadingZeroes = /0*/;
         let cleared = e.target.value.replace(leadingZeroes, '');
 
-        if (cleared.split('').includes('.')){
+        if (cleared.split('')[0] === '.'){
 
             let dollars = cleared.split('');
             dollars.splice(0,0,'0');
             cleared = dollars.join('');
-            
+
         }
 
         e.target.value = cleared;
@@ -46,7 +44,6 @@ const NumberInput = (props) => {
                     id={ props.field }
                     onBlur={ clearLeadingZeroes }
                     type="number"
-                    min="0"
                 />
             </div>
         </div>
