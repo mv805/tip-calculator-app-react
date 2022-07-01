@@ -5,14 +5,14 @@ const PercentButton = (props) => {
 
     const highlightButton = () => {
         props.onSelectPercentage(props.percentage);
-        props.onButtonSelect(true);
+        props.onSelectButton(props.percentage);
     };
 
     return (
         <Fragment>
             <button
                 className={ `${ styles.button } 
-                ${ props.selectedPercentage === props.percentage && props.isButtonSelected ? styles.selected : styles['not-selected'] }` }
+                ${ props.currentSelected === props.percentage ? styles.selected : styles['not-selected'] }` }
                 onClick={ highlightButton }>{ `${ props.percentage }%` }</button>
         </Fragment>
     );

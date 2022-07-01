@@ -1,0 +1,42 @@
+.Results--card{
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 1rem;
+    flex-direction: column;
+    color: var(--light-area-font-midtone);
+    background-color: var(--panel-dark-boxes);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.Results--reset-button {
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--dark-area-font-midtone);
+    background-color: var(--panel-light-boxes);
+    font-size: 1.5rem;
+    padding: .5rem 0;
+} 
+
+
+.ResultField--field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ResultField--field #main-label{
+    color: var(--dark-area-font-bright);
+}
+
+.ResultField--field #sub-label{
+    font-size: .9rem;
+}
+
+.ResultField--field #amount{
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    color: var(--dark-area-font-darker);
+}
