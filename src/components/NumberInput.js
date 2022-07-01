@@ -3,38 +3,48 @@ import styles from './NumberInput.module.css';
 
 const NumberInput = (props) => {
 
-    const [fieldInvalid, setFieldInvalid] = useState(false);
 
     const inputHandler = (e) => {
 
-        console.log(e.target.value);
-
         if (isNaN(e.target.value) ||
-            Number(e.target.value) < props.minValue ||
+            +e.target.value < props.minValue ||
             e.target.value === '') {
-            setFieldInvalid(true);
+            console.log('invalid');
             return;
-        }
+        } 
+        
+        props.onFieldUpdate(+e.target.value);
 
-        setFieldInvalid(false);
-
-        props.onFieldUpdate(e.target.value);
     };
 
-    const cleanupField = () => {
+    const clearLeadingZeroes = (e) => {
+
+        const leadingZeroes = /0*/;
+        let cleared = e.target.value.replace(leadingZeroes, '');
+
+        if (cleared.split('').includes('.')){
+
+            let dollars = cleared.split('');
+            dollars.splice(0,0,'0');
+            cleared = dollars.join('');
+            
+        }
+
+        e.target.value = cleared;
 
     };
 
     return (
         <div className={ styles.input }>
             <label htmlFor={ props.field }>{ props.field }</label>
-            <div className={ fieldInvalid ? styles['invalid-field'] : '' }>
+            <div>
                 { props.symbol }
                 <input
-                    defaultValue={ props.initialValue }
+                    value={ props.displayValue }
                     onChange={ inputHandler }
                     name={ props.field }
                     id={ props.field }
+                    onBlur={ clearLeadingZeroes }
                     type="number"
                     min="0"
                 />
