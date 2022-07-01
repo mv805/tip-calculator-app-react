@@ -9,8 +9,8 @@ const NumberInput = (props) => {
             +e.target.value < props.minValue ||
             e.target.value === '') {
             return;
-        } 
-        
+        }
+
         props.onFieldUpdate(+e.target.value);
 
     };
@@ -20,12 +20,17 @@ const NumberInput = (props) => {
         const leadingZeroes = /0*/;
         let cleared = e.target.value.replace(leadingZeroes, '');
 
-        if (cleared.split('')[0] === '.'){
+        if (cleared.split('')[0] === '.') {
 
             let dollars = cleared.split('');
-            dollars.splice(0,0,'0');
+            dollars.splice(0, 0, '0');
             cleared = dollars.join('');
 
+        }
+
+        if(cleared === ''){
+            e.target.value = '0';
+            return;
         }
 
         e.target.value = cleared;
@@ -38,6 +43,9 @@ const NumberInput = (props) => {
             <div>
                 { props.symbol }
                 <input
+                    onClick={ (e) => {
+                        e.target.select();
+                    } }
                     value={ props.displayValue }
                     onChange={ inputHandler }
                     name={ props.field }

@@ -20,3 +20,21 @@
     row-gap: 1.25rem;
     column-gap: 1.25rem;
 }
+
+.custom {
+    width: 100%;
+    border: 3px solid var(--panel-lines);
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.custom::placeholder{
+    color: var(--light-area-font-midtone);
+
+}
+
+.selected {
+    border-color: var(--light-area-font-midtone);
+}

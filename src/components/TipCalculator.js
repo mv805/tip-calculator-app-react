@@ -13,6 +13,7 @@ const TipCalculator = () => {
     const [billAmount, setBillAmount] = useState(0);
     const [numOfPeople, setNumOfPeople] = useState(1);
     const [selectedPercentage, setSelectedPercentage] = useState(0);
+    const [buttonSelected, setButtonSelected] = useState(false);
 
     const setBill = (price) => {
         setBillAmount(price);
@@ -32,7 +33,7 @@ const TipCalculator = () => {
 
     // console.log('Bill: ', billAmount, typeof billAmount);
     // console.log('Num of People: ', numOfPeople, typeof numOfPeople);
-
+    console.log("button selected: ", buttonSelected, 'Tip percent: ', selectedPercentage);
     return (
         <div className={ styles.panel }>
             <NumberInput
@@ -48,6 +49,10 @@ const TipCalculator = () => {
                     setSelectedPercentage(percent);
                     formatInput();
                 } }
+                onButtonSelect={ (e) => {
+                    setButtonSelected(e);
+                } }
+                isButtonSelected={ buttonSelected }
             />
             <NumberInput
                 field="Number of People"
