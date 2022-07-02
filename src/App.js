@@ -1,14 +1,21 @@
+import { useRef } from 'react';
 import './App.css';
+import LightSwitch from './components/LightSwitch';
 import TipCalculator from './components/TipCalculator';
 
 function App() {
+
   return (
     <div className="App">
+    <LightSwitch />
       <div className="title">
         <h1>Spli</h1>
         <h1>tter</h1>
       </div>
-        <TipCalculator />
+      <TipCalculator id="calculator" />
+      <footer>
+        Coded by <a href='https://github.com/mv805'>Matt Villa.</a> All Rights Reserved ©
+      </footer>
     </div>
   );
 }

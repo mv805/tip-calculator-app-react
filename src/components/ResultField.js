@@ -5,9 +5,9 @@ const ResultField = (props) => {
         <div className="ResultField--field">
             <div id="labels">
                 <div id="main-label">{props.mainTitle}</div>
-                <div id="sub-label">/ person</div>
+                <div id="sub-label">{props.subTitle}</div>
             </div>
-            <div id="amount">$4.27</div>
+            <div id="amount">{`$${props.amount}`}</div>
         </div>
     );
 };

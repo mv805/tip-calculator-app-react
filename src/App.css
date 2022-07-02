@@ -14,6 +14,21 @@
   --dark-area-font-midtone: rgb(38, 30, 66);
   --dark-area-font-darker: rgb(255, 255, 255);
 
+
+}
+
+[data-theme="dark"] {
+  --background: hsl(199, 84%, 88%);
+  --panel: rgb(255, 255, 255);
+  --panel-lines: rgb(231, 231, 231);
+  --panel-dark-boxes: rgb(164, 163, 231);
+  --panel-light-boxes: rgb(124, 66, 199);
+
+  --light-area-font-dark: rgb(161, 145, 212);
+  --light-area-font-midtone: rgb(115, 106, 145);
+  --dark-area-font-bright: rgb(109, 20, 192);
+  --dark-area-font-midtone: rgb(180, 160, 250);
+  --dark-area-font-darker: rgb(153, 0, 255);
 }
 
 .App {
@@ -23,6 +38,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+* {
+  transition-duration: 1s;
 }
 
 .App h1 {
@@ -30,9 +50,7 @@
   letter-spacing: 1rem;
   text-align: center;
   margin: 0;
-  color: var(--dark-area-font-midtone);
-  -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: rgb(194, 157, 255);
+  color: var(--dark-area-font-bright);
 }
 
 .title {
@@ -45,4 +63,70 @@
 
 .App * {
   box-sizing: border-box;
+}
+
+footer {
+  color: var(--dark-area-font-bright);
+  margin-top: auto;
+}
+
+/*light switch*/
+.theme-switch-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem;
+
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: rgb(68, 40, 94);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: rgb(78, 80, 90);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  background-color: #ffffff;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

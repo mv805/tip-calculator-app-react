@@ -15,6 +15,20 @@ const TipCalculator = () => {
     const [numOfPeople, setNumOfPeople] = useState(1);
     const [selectedPercentage, setSelectedPercentage] = useState(0);
 
+    const [totalPerPerson, setTotalPerPerson] = useState(0);
+    const [tipPerPerson, setTipPerPerson] = useState(0);
+
+    const calculateTip = (percent) => {
+
+        let tipTotal = billAmount * (percent / 100);
+        let personalTotal = (billAmount + tipTotal) / numOfPeople;
+        setTotalPerPerson(personalTotal.toFixed(2));
+
+        let personalTipTotal = tipTotal / numOfPeople;
+        setTipPerPerson(personalTipTotal.toFixed(2));
+
+    };
+
     const setBill = (price) => {
         setBillAmount(price);
     };
@@ -31,9 +45,11 @@ const TipCalculator = () => {
 
     };
 
+
     return (
         <div className={ styles.panel }>
             <NumberInput
+                className={ styles.bill }
                 field="Bill"
                 symbol={ moneySymbol }
                 onFieldUpdate={ setBill }
@@ -45,16 +61,28 @@ const TipCalculator = () => {
                 onSelectPercentage={ (percent) => {
                     setSelectedPercentage(percent);
                     formatInput();
+                    calculateTip(percent);
                 } }
             />
             <NumberInput
+                className={ styles.people }
                 field="Number of People"
                 symbol={ peopleSymbol }
                 onFieldUpdate={ setAmountOfPeople }
                 minValue={ 1 }
                 displayValue={ numOfPeople }
             />
-            <Results />
+            <Results
+                tipPerPerson={ tipPerPerson }
+                totalPerPerson={ totalPerPerson }
+                totalBill={ (totalPerPerson * numOfPeople).toFixed(2) }
+                onReset={ () => {
+                    setNumOfPeople(1);
+                    setBillAmount(0);
+                    setTotalPerPerson(0);
+                    setTipPerPerson(0);
+                } }
+            />
         </div>
     );
 };

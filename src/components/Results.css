@@ -18,7 +18,12 @@
     background-color: var(--panel-light-boxes);
     font-size: 1.5rem;
     padding: .5rem 0;
+    cursor: pointer;
 } 
+
+.Results--reset-button:active {
+    background-color: white;
+}
 
 
 .ResultField--field {
@@ -39,4 +44,16 @@
     align-items: center;
     font-size: 1.75rem;
     color: var(--dark-area-font-darker);
+}
+
+
+@media (min-width: 800px) {
+
+    .Results--card {
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+        justify-content: space-between;
+        font-size: 2rem;
+    }
+
 }

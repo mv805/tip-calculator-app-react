@@ -38,3 +38,13 @@
 .selected {
     border-color: var(--light-area-font-midtone);
 }
+
+
+@media (min-width: 800px) {
+
+    .tip-selector {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+}
