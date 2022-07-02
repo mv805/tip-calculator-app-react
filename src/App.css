@@ -42,7 +42,7 @@
 }
 
 * {
-  transition-duration: 1s;
+  transition-duration: .25s;
 }
 
 .App h1 {
@@ -68,6 +68,7 @@
 footer {
   color: var(--dark-area-font-bright);
   margin-top: auto;
+  text-align: center;
 }
 
 /*light switch*/
