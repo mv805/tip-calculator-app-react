@@ -14,7 +14,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./screenshot.PNG)
 
 ### Links
 - Live Site URL: [https://mv805.github.io/tip-calculator-app-react](https://mv805.github.io/tip-calculator-app-react)
