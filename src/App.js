@@ -14,7 +14,7 @@ function App() {
       <TipCalculator id="calculator" />
       <footer>
         Coded by <a href='https://github.com/mv805'>Matt Villa.</a> All Rights Reserved ©
-        Project idea by <a href='https://www.frontendmentor.io/home'>Frontend Mentor.</a>
+        Project idea by <a href='https://www.frontendmentor.io/home'>Frontend Mentor. </a>V1.0.0
       </footer>
     </div>
   );
