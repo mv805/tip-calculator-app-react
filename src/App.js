@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import './App.css';
 import LightSwitch from './components/LightSwitch';
 import TipCalculator from './components/TipCalculator';
@@ -15,6 +14,7 @@ function App() {
       <TipCalculator id="calculator" />
       <footer>
         Coded by <a href='https://github.com/mv805'>Matt Villa.</a> All Rights Reserved ©
+        Project idea by <a href='https://www.frontendmentor.io/home'>Frontend Mentor.</a>
       </footer>
     </div>
   );
