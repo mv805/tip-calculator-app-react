@@ -4,7 +4,7 @@ const LightSwitch = () => {
 
     let checkbox = <input type="checkbox" id="checkbox" />;
 
-    const [lightSwitchOn, setLightSwitchOn] = useState(false);
+    const [lightSwitchOn, setLightSwitchOn] = useState(true);
 
     return (
         <div className="theme-switch-wrapper">

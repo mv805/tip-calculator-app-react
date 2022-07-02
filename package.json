@@ -1,6 +1,6 @@
 {
   "name": "tip-calculator-app-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://mv805.github.io/tip-calculator-app-react/",
   "private": true,
   "dependencies": {
